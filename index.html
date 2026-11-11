@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohan Marri | Portfolio</title>
+    <meta name="description"
+        content="Portfolio of Rohan Marri, Computer Science Undergraduate, AI & Full-Stack Software Engineer. Specializing in Agentic AI, LLM systems, proactive edge caching, and scalable web architectures.">
+    <meta name="author" content="Rohan Marri">
+
+    <!-- Open Graph / LinkedIn / Facebook Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://marrirohan.github.io/Rohan-Portfolio/">
+    <meta property="og:title" content="Rohan Marri | AI & Software Engineer Portfolio">
+    <meta property="og:description"
+        content="Personal portfolio of Rohan Marri showcasing agentic AI projects, research at NIT Warangal, IoT telemetry pipelines, and technical credentials.">
+    <meta property="og:image" content="assets/profile/rohan.png">
+    <meta property="og:image:secure_url" content="assets/profile/rohan.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Rohan Marri | Software Engineer Portfolio Preview">
+
+    <!-- Twitter / X Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://marrirohan.github.io/Rohan-Portfolio/">
+    <meta name="twitter:title" content="Rohan Marri | AI & Software Engineer Portfolio">
+    <meta name="twitter:description"
+        content="Personal portfolio of Rohan Marri showcasing agentic AI projects, research at NIT Warangal, IoT telemetry pipelines, and technical credentials.">
+    <meta name="twitter:image" content="assets/profile/rohan.png">
+    <meta name="twitter:image:alt" content="Rohan Marri | Software Engineer Portfolio Preview">
+
+    <!-- Inline Script to ensure DARK MODE is ALWAYS default on page load and prevent theme flash -->
+    <script>
+        (function () {
+            // Strictly enforce default DARK MODE on every fresh page load / refresh
+            document.documentElement.setAttribute('data-theme', 'dark');
+        })();
+    </script>
+
+    <!-- Premium Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Redesigned Main Stylesheet -->
+    <link rel="stylesheet" href="style.css?v=30">
+
+    <!-- Devicon CDN for Technology Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+</head>
+
+<body>
+
+    <!-- Persistent Global Animated Futuristic Background System (Shared across entire portfolio) -->
+    <div class="global-bg-system" id="global-bg-system" aria-hidden="true">
+        <canvas id="global-canvas" class="global-canvas"></canvas>
+        <div class="global-grid-bg"></div>
+        <div class="global-radial-glow global-glow-1"></div>
+        <div class="global-radial-glow global-glow-2"></div>
+        <div class="global-radial-glow global-glow-3"></div>
+    </div>
+
+    <!-- Interactive Custom Cursor Elements -->
+    <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+    <div class="cursor-ring" id="cursor-ring" aria-hidden="true">
+        <span class="cursor-label" id="cursor-label"></span>
+    </div>
+
+    <!-- 1. Cinematic Interactive Intro Screen Overlay -->
+    <div class="intro-screen" id="intro-screen">
+        <!-- Top-Right Control Area: Green Status Badge + Theme Toggle -->
+        <div class="intro-top-bar">
+            <div class="intro-status-badge">
+                <span class="pulse-indicator"></span>
+                <span class="status-text">SYSTEM ONLINE &bull; OPEN FOR OPPORTUNITIES</span>
+            </div>
+            <button class="theme-toggle-btn intro-theme-toggle" id="intro-theme-toggle" aria-label="Toggle theme"
+                title="Toggle Light/Dark Theme">
+                <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Interactive Background Canvas & Atmospheric Glow Layers -->
+        <canvas id="intro-canvas" class="intro-canvas"></canvas>
+        <div class="intro-grid-bg" aria-hidden="true"></div>
+        <div class="intro-radial-glow intro-glow-1" aria-hidden="true"></div>
+        <div class="intro-radial-glow intro-glow-2" aria-hidden="true"></div>
+        <div class="intro-radial-glow intro-glow-3" aria-hidden="true"></div>
+
+        <!-- Central Content System -->
+        <div class="intro-content" id="intro-content">
+            <!-- Hero Typography: Distinctive Single-Line Name Treatment -->
+            <div class="intro-name-display" id="intro-name-display">
+                <h1 class="intro-hero-title">
+                    <span class="intro-name-text">ROHAN MARRI<span class="intro-period">.</span></span>
+                </h1>
+                <div class="intro-scan-beam" aria-hidden="true"></div>
+            </div>
+
+            <!-- Role & Domain Definition Line -->
+            <p class="intro-role-descriptor">
+                <span class="role-segment">AI Software Engineer</span>
+                <span class="role-separator">&bull;</span>
+                <span class="role-segment">Full Stack Developer</span>
+                <span class="role-separator">&bull;</span>
+                <span class="role-segment">Agentic AI &amp; LLMs</span>
+                <span class="role-separator">&bull;</span>
+                <span class="role-segment">Research Intern @ NIT Warangal</span>
+                <span class="role-separator">&bull;</span>
+                <span class="role-segment">Systems &amp; Industrial IoT</span>
+            </p>
+
+            <!-- Magnetic CTA Button with Orbit Glow -->
+            <div class="intro-cta-wrap">
+                <button class="intro-magnetic-btn" id="enter-portfolio-btn" aria-label="Enter Rohan Marri's Portfolio"
+                    data-cursor="ENTER">
+                    <span class="btn-glow-layer" aria-hidden="true"></span>
+                    <span class="btn-border-tracer" aria-hidden="true"></span>
+                    <span class="btn-content">
+                        <span class="btn-text">ENTER PORTFOLIO</span>
+                        <svg class="enter-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Website Wrapper (Initially hidden/blurred slightly) -->
+    <div class="portfolio-wrapper" id="portfolio-wrapper">
+
+        <!-- Navigation Header -->
+        <header class="main-header" id="header">
+            <div class="nav-container">
+                <a href="#" class="logo" id="logo">
+                    <span class="logo-name">ROHAN MARRI</span>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <nav class="nav-links-desktop" aria-label="Main Navigation">
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#experience" class="nav-link">Experience</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#education" class="nav-link">Education</a>
+                    <a href="#certifications" class="nav-link">Certifications</a>
+                    <a href="#events" class="nav-link">Events</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </nav>
+
+                <div class="header-actions">
+                    <!-- Resume Preview in Header (Opens PDF in new tab) -->
+                    <a href="assets/resume/Rohan-Marri-Resume.pdf" class="nav-resume-btn" target="_blank"
+                        rel="noopener noreferrer" aria-label="Resume Preview">
+                        <svg class="nav-resume-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                        <span>Resume Preview</span>
+                    </a>
+
+                    <!-- Dark/Light Theme Toggle -->
+                    <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle theme"
+                        title="Toggle Light/Dark Theme">
+                        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+
+                    <!-- Mobile Hamburger -->
+                    <button class="mobile-hamburger" id="hamburger-btn" aria-label="Toggle mobile menu"
+                        aria-expanded="false">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Mobile Drawer Navigation -->
+        <div class="mobile-drawer" id="mobile-menu" aria-hidden="true">
+            <nav class="mobile-nav-links" aria-label="Mobile Navigation">
+                <a href="#about" class="mobile-nav-link">About</a>
+                <a href="#experience" class="mobile-nav-link">Experience</a>
+                <a href="#projects" class="mobile-nav-link">Projects</a>
+                <a href="#skills" class="mobile-nav-link">Skills</a>
+                <a href="#education" class="mobile-nav-link">Education</a>
+                <a href="#certifications" class="mobile-nav-link">Certifications</a>
+                <a href="#events" class="mobile-nav-link">Events</a>
+                <a href="#contact" class="mobile-nav-link">Contact</a>
+                <a href="assets/resume/Rohan-Marri-Resume.pdf" class="mobile-nav-link mobile-resume-link"
+                    target="_blank" rel="noopener noreferrer">Resume Preview ↗</a>
+            </nav>
+        </div>
+
+        <!-- Main Document Body -->
+        <main>
+
+            <!-- Hero / First Section -->
+            <section class="hero-section" id="hero">
+                <div class="hero-container">
+                    <div class="hero-text-content">
+                        <span class="hero-eyebrow">COMPUTER SCIENCE UNDERGRADUATE / AI &amp; FULL-STACK SOFTWARE ENGINEER</span>
+                        <h1 class="hero-title">
+                            <span class="greeting-line">Hi, I'm</span>
+                            <span class="name-line text-bold">ROHAN</span>
+                            <span class="name-line text-bold text-accent">MARRI.</span>
+                        </h1>
+                        <h2 class="hero-subtitle">AI &amp; Full Stack Software Engineer | Research Intern at NIT Warangal
+                        </h2>
+                        <p class="hero-lead">
+                            Building scalable agentic AI workflows, engineering full-stack web applications, and evaluating proactive distributed network edge caching.
+                        </p>
+                        <div class="hero-cta-group">
+                            <a href="#projects" class="btn btn-primary">View My Work</a>
+                            <a href="assets/resume/Rohan-Marri-Resume.pdf" class="btn btn-secondary" target="_blank"
+                                download>
+                                Download Resume
+                                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="hero-socials" id="hero-socials">
+                            <a href="https://github.com/MarriRohan" class="hero-social-btn" data-platform="github"
+                                target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                </svg>
+                            </a>
+                            <a href="https://www.linkedin.com/in/rohan-marri-914886373/" class="hero-social-btn"
+                                data-platform="linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
+                                title="LinkedIn">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z" />
+                                </svg>
+                            </a>
+                            <a href="mailto:rohanmarri18@gmail.com" class="hero-social-btn" data-platform="email"
+                                aria-label="Email Me" title="Email Me">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" />
+                                    <path
+                                        d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="hero-image-content">
+                        <div class="hero-portrait-container">
+                            <div class="hero-portrait-wrapper">
+                                <img src="assets/profile/rohan.png" alt="Rohan Marri - Portrait"
+                                    class="hero-portrait-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section class="about-section section-padding" id="about">
+                <div class="container grid-about">
+                    <div class="about-left-col scroll-trigger">
+                        <div class="about-image-wrapper">
+                            <img src="assets/profile/rohan.png" alt="Rohan Marri - Portrait"
+                                class="about-profile-img">
+                        </div>
+                    </div>
+                    <div class="about-right-col scroll-trigger">
+                        <div class="about-section-header">
+                            <h2 class="about-title-main">ABOUT ME</h2>
+                        </div>
+                        <div class="about-text-content">
+                            <p class="about-intro-paragraph">
+                                Hi, I’m Rohan Marri. I’m a Computer Science and Engineering undergraduate at SR University, Warangal (2023–2027), deeply focused on Agentic AI, large language model systems, and production full-stack engineering.
+                            </p>
+                            <p class="about-body-paragraph">
+                                I have conducted distributed network research as a Research Intern at the National Institute of Technology Warangal (NIT Warangal) under Prof. Amarjit Kumar, evaluating proactive FeRAN edge caching across multi-variable TTL configurations. Additionally, in a joint initiative with NIT Warangal and Siemens, I engineered Industrial IoT pipelines processing 1,000+ real-time telemetry points daily with sub-100ms latency. At Mumbai Hacks 2025, I was recognized in the top 10% among 900+ teams for building a scalable AI application.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section class="experience-section section-padding" id="experience">
+                <div class="container">
+                    <div class="section-header scroll-trigger">
+                        <h2 class="section-title">EXPERIENCE</h2>
+                    </div>
+
+                    <div class="experience-grid">
+                        <!-- Experience Card 1: NIT Warangal Research Internship -->
+                        <div class="experience-card-item scroll-trigger">
+                            <div class="exp-card-inner">
+                                <div class="exp-card-header">
+                                    <div class="exp-header-left">
+                                        <div class="exp-company-logo-wrap logo-dark-bg">
+                                            <img src="assets/experience/nitw_logo.svg" alt="NIT Warangal Logo"
+                                                class="exp-company-logo" loading="lazy">
+                                        </div>
+                                        <div class="exp-role-wrap">
+                                            <h3 class="exp-role-title">Research Intern</h3>
+                                            <span class="exp-company-name">National Institute of Technology Warangal (NITW)</span>
+                                        </div>
+                                    </div>
+                                    <span class="exp-badge badge-lead">Research Internship</span>
+                                </div>
+
+                                <div class="exp-meta-row">
+                                    <span class="exp-meta-item">
+                                        <svg class="exp-meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2">
+                                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                                        </svg>
+                                        2026
+                                    </span>
+                                    <span class="exp-meta-item">
+                                        <svg class="exp-meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2">
+                                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                            <circle cx="12" cy="10" r="3"></circle>
+                                        </svg>
+                                        Under Professor Amarjit Kumar · NIT Warangal
+                                    </span>
+                                </div>
+
+                                <p class="exp-card-desc">
+                                    Implemented FeRAN proactive edge caching using OMNeT++, C++, and NED across 4 eRRHs, modeling distributed network components. Evaluated 8 scenarios (C–C7) across 6 TTL values (5–200s) with varying caching, bandwidth, and mobility parameters. Analyzed 3 repetitions/configuration using Python, Pandas, and Matplotlib for delay, energy, and bandwidth performance metrics.
+                                </p>
+
+                                <div class="exp-card-tags">
+                                    <span class="exp-tag">OMNeT++</span>
+                                    <span class="exp-tag">C++</span>
+                                    <span class="exp-tag">NED</span>
+                                    <span class="exp-tag">FeRAN Edge Caching</span>
+                                    <span class="exp-tag">Distributed Networks</span>
+                                    <span class="exp-tag">Python</span>
+                                    <span class="exp-tag">Pandas</span>
+                                    <span class="exp-tag">Matplotlib</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Experience Card 2: Siemens & NIT Warangal IIoT Internship -->
+                        <div class="experience-card-item scroll-trigger">
+                            <div class="exp-card-inner">
+                                <div class="exp-card-header">
+                                    <div class="exp-header-left">
+                                        <div class="exp-company-logo-wrap logo-dark-bg">
+                                            <img src="assets/experience/siemens_logo.svg" alt="Siemens Logo"
+                                                class="exp-company-logo" loading="lazy">
+                                        </div>
+                                        <div class="exp-role-wrap">
+                                            <h3 class="exp-role-title">Industrial IoT Intern</h3>
+                                            <span class="exp-company-name">Joint Initiative of NIT Warangal and Siemens</span>
+                                        </div>
+                                    </div>
+                                    <span class="exp-badge badge-internship">Summer Internship</span>
+                                </div>
+
+                                <div class="exp-meta-row">
+                                    <span class="exp-meta-item">
+                                        <svg class="exp-meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2">
+                                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                                        </svg>
+                                        2025
+                                    </span>
+                                    <span class="exp-meta-item">
+                                        <svg class="exp-meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2">
+                                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                            <circle cx="12" cy="10" r="3"></circle>
+                                        </svg>
+                                        NIT Warangal &amp; Siemens Center of Excellence
+                                    </span>
+                                </div>
+
+                                <p class="exp-card-desc">
+                                    Built an IIoT data pipeline connecting ESP32/Arduino sensors to backend services, processing 1,000+ real-time data points/day with sub-100ms latency. Integrated MQTT, HTTP, and Modbus protocols, improving communication reliability by 25%. Developed real-time dashboards on ThingsBoard IoT with automated alerts, improving monitoring efficiency by 30%.
+                                </p>
+
+                                <div class="exp-card-tags">
+                                    <span class="exp-tag">Industrial IoT</span>
+                                    <span class="exp-tag">Siemens</span>
+                                    <span class="exp-tag">ESP32</span>
+                                    <span class="exp-tag">Arduino</span>
+                                    <span class="exp-tag">MQTT</span>
+                                    <span class="exp-tag">Modbus</span>
+                                    <span class="exp-tag">ThingsBoard</span>
+                                    <span class="exp-tag">Real-Time Telemetry</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Experience Card 3: Mumbai Hacks 2025 Top 10% Finalist -->
+                        <div class="experience-card-item scroll-trigger">
+                            <div class="exp-card-inner">
+                                <div class="exp-card-header">
+                                    <div class="exp-header-left">
+                                        <div class="exp-company-logo-wrap logo-dark-bg">
+                                            <img src="assets/experience/mumbai_hacks_logo.svg" alt="Mumbai Hacks Logo"
+                                                class="exp-company-logo" loading="lazy">
+                                        </div>
+                                        <div class="exp-role-wrap">
+                                            <h3 class="exp-role-title">Agentic AI Hackathon Finalist</h3>
+                                            <span class="exp-company-name">Mumbai Hacks 2025 (TEAM &amp; HCLTech)</span>
+                                        </div>
+                                    </div>
+                                    <span class="exp-badge badge-parttime">Top 10% Finalist</span>
+                                </div>
+
+                                <div class="exp-meta-row">
+                                    <span class="exp-meta-item">
+                                        <svg class="exp-meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2">
+                                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                                        </svg>
+                                        Nov 2025
+                                    </span>
+                                    <span class="exp-meta-item">
+                                        <svg class="exp-meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2">
+                                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                            <circle cx="12" cy="10" r="3"></circle>
+                                        </svg>
+                                        Mumbai, India
+                                    </span>
+                                </div>
+
+                                <p class="exp-card-desc">
+                                    Ranked in the Top 10% among 900+ competitive teams at Mumbai Hacks 2025 (India's premier Agentic AI hackathon) for architecting and building a scalable AI application with deterministic tool-calling, multi-step LLM routing, and low-latency responses.
+                                </p>
+
+                                <div class="exp-card-tags">
+                                    <span class="exp-tag">Agentic AI</span>
+                                    <span class="exp-tag">LLMs</span>
+                                    <span class="exp-tag">Prompt Engineering</span>
+                                    <span class="exp-tag">FastAPI</span>
+                                    <span class="exp-tag">React</span>
+                                    <span class="exp-tag">Scalable Architecture</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Live Projects Section -->
+            <section class="projects-section section-padding" id="projects">
+                <div class="container">
+                    <div class="section-header scroll-trigger">
+                        <h2 class="section-title">PROJECTS</h2>
+                    </div>
+
+                    <p class="section-lead-desc scroll-trigger">
+                        A curated selection of products, platforms, and engineering projects I've built.
+                    </p>
+
+                    <!-- Dynamically Populated Project Cards List -->
+                    <div class="projects-list-container" id="projects-list-container">
+                        <!-- Populated dynamically by script.js -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills & Technologies Section -->
+            <section class="skills-section section-padding" id="skills">
+                <div class="container">
+                    <div class="section-header scroll-trigger">
+                        <h2 class="section-title">SKILLS &amp; TECHNOLOGIES</h2>
+                    </div>
+
+                    <p class="section-lead-desc scroll-trigger">
+                        Technologies, tools, and platforms I use to build modern software.
+                    </p>
+
+                    <div class="skills-groups-wrapper scroll-trigger" id="skills-grid-container">
+                        <!-- Populated dynamically by script.js -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education Section -->
+            <section class="education-section section-padding" id="education">
+                <div class="container">
+                    <div class="section-header scroll-trigger">
+                        <h2 class="section-title">EDUCATION</h2>
+                    </div>
+
+                    <div class="education-columns-wrapper">
+                        <!-- Education Card 1: SR University -->
+                        <div class="education-column-card scroll-trigger" style="max-width: 720px; margin: 0 auto;">
+                            <div class="education-card-meta">
+                                <span class="education-card-date">2023 – 2027</span>
+                                <div class="education-meta-right">
+                                    <a href="https://sru.edu.in/" target="_blank" rel="noopener noreferrer" class="education-logo-link" title="Visit SR University (opens in new tab)" aria-label="SR University">
+                                        <img src="assets/education/sru_logo.svg" alt="SR University Logo" class="education-inst-logo" loading="lazy" style="height: 38px; width: auto;">
+                                    </a>
+                                    <span class="education-card-status">Active Undergraduate</span>
+                                </div>
+                            </div>
+                            <h3 class="education-card-degree">B.Tech — Computer Science and Engineering</h3>
+                            <span class="education-card-inst">SR University &bull; Warangal, India</span>
+                            <div class="education-card-divider"></div>
+                            <p class="education-card-text">
+                                Rigorous computer science foundation spanning Data Structures &amp; Algorithms, Object-Oriented Programming, Database Management Systems (DBMS), Operating Systems, Distributed Systems, and cutting-edge Agentic AI &amp; LLM workflows.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Certifications Section -->
+            <section class="certifications-section section-padding" id="certifications">
+                <div class="container">
+                    <div class="section-header scroll-trigger">
+                        <h2 class="section-title">CERTIFICATIONS</h2>
+                    </div>
+
+                    <p class="section-lead-desc scroll-trigger">
+                        Professional certifications, courses, and credentials I've earned.
+                    </p>
+
+                    <!-- Filters Container -->
+                    <div class="cert-filters scroll-trigger" id="certifications-filters">
+                        <button class="cert-filter-btn active" data-filter="all">All</button>
+                        <button class="cert-filter-btn" data-filter="development">Development</button>
+                        <button class="cert-filter-btn" data-filter="ai-ml">AI / ML</button>
+                        <button class="cert-filter-btn" data-filter="cloud">Cloud</button>
+                        <button class="cert-filter-btn" data-filter="data">Data</button>
+                        <button class="cert-filter-btn" data-filter="blockchain">Blockchain</button>
+                        <button class="cert-filter-btn" data-filter="product">Product</button>
+                        <button class="cert-filter-btn" data-filter="professional">Professional</button>
+                        <button class="cert-filter-btn" data-filter="other">Other</button>
+                    </div>
+                </div>
+
+                <!-- Full-Width Horizontal Infinite Marquee Showcase (Single Row) -->
+                <div class="cert-marquee-container scroll-trigger" id="certifications-marquee-container">
+                    <div class="cert-marquee-fade cert-marquee-fade-left"></div>
+                    <div class="cert-marquee-fade cert-marquee-fade-right"></div>
+
+                    <!-- Single Horizontal Infinite Marquee Row -->
+                    <div class="cert-marquee-row" data-direction="left">
+                        <div class="cert-marquee-track" id="cert-marquee-track">
+                            <!-- Injected dynamically by script.js -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Industry & Tech Events Section -->
+            <section class="events-section section-padding" id="events">
+                <div class="container">
+                    <div class="section-header scroll-trigger">
+                        <h2 class="section-title">INDUSTRY &amp; TECH EVENTS</h2>
+                    </div>
+
+                    <p class="section-lead-desc scroll-trigger">
+                        Keynotes, hackathons, data center visits, and industry summits I've attended.
+                    </p>
+
+                    <div class="events-stack-container">
+                        <!-- EVENT 01: Photo Left | Content Right -->
+                        <article class="event-horizontal-card scroll-trigger">
+                            <div class="event-col-media">
+                                <div class="event-photo-wrapper">
+                                    <div class="event-photo-ambient" style="background-image: url('assets/certificates/previews/MumbaiHacks_2025.jpg');"></div>
+                                    <img src="assets/certificates/previews/MumbaiHacks_2025.jpg" alt="Mumbai Hacks 2025 Finalist" class="event-hero-photo" loading="lazy">
+                                    <span class="event-date-badge">Nov 2025</span>
+                                    <a href="https://www.linkedin.com/in/rohan-marri-914886373/" target="_blank" rel="noopener noreferrer" class="event-corner-linkedin" title="Open on LinkedIn" aria-label="LinkedIn Profile">
+                                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="event-col-content">
+                                <div class="event-content-inner">
+                                    <span class="event-cat-tag">NATIONAL HACKATHON • TOP 10% FINALIST</span>
+                                    <h3 class="event-main-title">Mumbai Hacks 2025</h3>
+                                    <p class="event-lead-desc">
+                                        Ranked in the Top 10% among 900+ participating teams nationwide at Mumbai Hacks 2025. Architected an AR assistive facial recognition helper for dementia care, implementing edge inference, real-time computer vision, and rapid prototyping.
+                                    </p>
+                                    <div class="event-actions-bar">
+                                        <a href="assets/certificates/MumbaiHacks_2025_Certificate.pdf" target="_blank" rel="noopener noreferrer" class="btn-event-view" aria-label="View Mumbai Hacks 2025 Certificate">
+                                            <svg class="event-btn-linkedin-icon" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15-5-5 1.41-1.41L11 14.17l7.59-7.59L20 8l-9 9z"/>
+                                            </svg>
+                                            <span>View Certificate</span>
+                                            <svg class="event-btn-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                                <line x1="7" y1="17" x2="17" y2="7"></line>
+                                                <polyline points="7 7 17 7 17 17"></polyline>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- EVENT 02: Content Left | Photo Right -->
+                        <article class="event-horizontal-card event-reverse scroll-trigger">
+                            <div class="event-col-content">
+                                <div class="event-content-inner">
+                                    <span class="event-cat-tag">RESEARCH INTERNSHIP • EDGE COMPUTING &amp; 5G</span>
+                                    <h3 class="event-main-title">FeRAN Edge Caching Architecture | NIT Warangal</h3>
+                                    <p class="event-lead-desc">
+                                         Conducted foundational edge systems research under Prof. Amarjit Kumar at NIT Warangal. Formulated dynamic edge caching strategies for Fog-Radio Access Networks (FeRAN), benchmarking algorithms to achieve a ~35% latency reduction and optimized bandwidth allocation.
+                                    </p>
+                                    <div class="event-actions-bar">
+                                        <a href="https://github.com/MarriRohan" target="_blank" rel="noopener noreferrer" class="btn-event-view" aria-label="View Project on GitHub">
+                                            <svg class="event-btn-linkedin-icon" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                                            </svg>
+                                            <span>Explore on GitHub</span>
+                                            <svg class="event-btn-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                                <line x1="7" y1="17" x2="17" y2="7"></line>
+                                                <polyline points="7 7 17 7 17 17"></polyline>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="event-col-media">
+                                <div class="event-photo-wrapper">
+                                    <div class="event-photo-ambient" style="background-image: url('assets/projects/feran_caching.svg');"></div>
+                                    <img src="assets/projects/feran_caching.svg" alt="FeRAN Edge Caching Architecture" class="event-hero-photo" loading="lazy">
+                                    <span class="event-date-badge">2026</span>
+                                    <a href="https://www.linkedin.com/in/rohan-marri-914886373/" target="_blank" rel="noopener noreferrer" class="event-corner-linkedin" title="Open on LinkedIn" aria-label="LinkedIn Profile">
+                                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- EVENT 03: Photo Left | Content Right -->
+                        <article class="event-horizontal-card scroll-trigger">
+                            <div class="event-col-media">
+                                <div class="event-photo-wrapper">
+                                    <div class="event-photo-ambient" style="background-image: url('assets/projects/iiot_siemens.svg');"></div>
+                                    <img src="assets/projects/iiot_siemens.svg" alt="Siemens &amp; NITW Industrial IoT" class="event-hero-photo" loading="lazy">
+                                    <span class="event-date-badge">2025</span>
+                                    <a href="https://www.linkedin.com/in/rohan-marri-914886373/" target="_blank" rel="noopener noreferrer" class="event-corner-linkedin" title="Open on LinkedIn" aria-label="LinkedIn Profile">
+                                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="event-col-content">
+                                <div class="event-content-inner">
+                                    <span class="event-cat-tag">INDUSTRIAL TRAINING • SMART MANUFACTURING</span>
+                                    <h3 class="event-main-title">Industrial IoT Telemetry Pipeline | Siemens &amp; NITW</h3>
+                                    <p class="event-lead-desc">
+                                        Completed hands-on engineering training in the joint initiative of NIT Warangal and Siemens. Configured industrial telemetry pipelines, integrated Modbus &amp; OPC-UA edge communication protocols, and established automated anomaly alert triggers.
+                                    </p>
+                                    <div class="event-actions-bar">
+                                        <a href="https://www.linkedin.com/in/rohan-marri-914886373/" target="_blank" rel="noopener noreferrer" class="btn-event-view" aria-label="View on LinkedIn">
+                                            <svg class="event-btn-linkedin-icon" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/>
+                                            </svg>
+                                            <span>View Experience on LinkedIn</span>
+                                            <svg class="event-btn-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                                <line x1="7" y1="17" x2="17" y2="7"></line>
+                                                <polyline points="7 7 17 7 17 17"></polyline>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- EVENT 04: Content Left | Photo Right -->
+                        <article class="event-horizontal-card event-reverse scroll-trigger">
+                            <div class="event-col-content">
+                                <div class="event-content-inner">
+                                    <span class="event-cat-tag">NATIONAL CONTEST • ALGORITHMIC EXCELLENCE</span>
+                                    <h3 class="event-main-title">All India All College (AIAC) Technical Contest</h3>
+                                    <p class="event-lead-desc">
+                                        Competed in the All India All College (AIAC) national level technical competition, demonstrating rigorous algorithmic problem solving, clean system design, and competitive coding efficiency across multi-round challenges.
+                                    </p>
+                                    <div class="event-actions-bar">
+                                        <a href="assets/certificates/AIAC_Certificate.pdf" target="_blank" rel="noopener noreferrer" class="btn-event-view" aria-label="View AIAC Certificate">
+                                            <svg class="event-btn-linkedin-icon" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15-5-5 1.41-1.41L11 14.17l7.59-7.59L20 8l-9 9z"/>
+                                            </svg>
+                                            <span>View Certificate</span>
+                                            <svg class="event-btn-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                                <line x1="7" y1="17" x2="17" y2="7"></line>
+                                                <polyline points="7 7 17 7 17 17"></polyline>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="event-col-media">
+                                <div class="event-photo-wrapper">
+                                    <div class="event-photo-ambient" style="background-image: url('assets/certificates/previews/AIAC_Certificate.png');"></div>
+                                    <img src="assets/certificates/previews/AIAC_Certificate.png" alt="All India All College Certificate" class="event-hero-photo" loading="lazy">
+                                    <span class="event-date-badge">2025</span>
+                                    <a href="assets/certificates/AIAC_Certificate.pdf" target="_blank" rel="noopener noreferrer" class="event-corner-linkedin" title="Open Certificate" aria-label="Certificate PDF">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- EVENT 05: Photo Left | Content Right -->
+                        <article class="event-horizontal-card scroll-trigger">
+                            <div class="event-col-media">
+                                <div class="event-photo-wrapper">
+                                    <div class="event-photo-ambient" style="background-image: url('assets/certificates/previews/IBM_Quantum_Basics.png.png');"></div>
+                                    <img src="assets/certificates/previews/IBM_Quantum_Basics.png.png" alt="Quantum Computing Credentials" class="event-hero-photo" loading="lazy">
+                                    <span class="event-date-badge">2025</span>
+                                    <a href="assets/certificates/Quantum_Computing_The_Open_University.pdf" target="_blank" rel="noopener noreferrer" class="event-corner-linkedin" title="Open Certificate" aria-label="Certificate PDF">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="event-col-content">
+                                <div class="event-content-inner">
+                                    <span class="event-cat-tag">CREDENTIALS • QUANTUM &amp; EMERGING TECH</span>
+                                    <h3 class="event-main-title">Quantum Computing &amp; Circuit Simulation | The Open University &amp; IBM</h3>
+                                    <p class="event-lead-desc">
+                                        Completed formal training in Quantum Computing with The Open University and earned the IBM Quantum Enigmas credential. Explored quantum states, superposition, Bell state entanglement, and simulated quantum circuits using Python and Qiskit.
+                                    </p>
+                                    <div class="event-actions-bar">
+                                        <a href="assets/certificates/Quantum_Computing_The_Open_University.pdf" target="_blank" rel="noopener noreferrer" class="btn-event-view" aria-label="View Quantum Computing Certificate">
+                                            <svg class="event-btn-linkedin-icon" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15-5-5 1.41-1.41L11 14.17l7.59-7.59L20 8l-9 9z"/>
+                                            </svg>
+                                            <span>View Certificate</span>
+                                            <svg class="event-btn-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                                <line x1="7" y1="17" x2="17" y2="7"></line>
+                                                <polyline points="7 7 17 7 17 17"></polyline>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Other Industry Events Subsection Header -->
+                    <div class="other-events-header scroll-trigger">
+                        <span class="other-events-pill">CONTINUOUS LEARNING &amp; SESSIONS</span>
+                        <h3 class="other-events-title">OTHER INDUSTRY SESSION, EVENT &amp; ACHIEVEMENT</h3>
+                        <p class="other-events-desc">
+                            Interactive technical workshops, group delegations, and industry expert sessions.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Full-Width Single-Row Auto & Manual Scrolling Showcase -->
+                <div class="mini-events-marquee-wrapper scroll-trigger">
+                    <div class="mini-events-fade mini-events-fade-left"></div>
+                    <div class="mini-events-fade mini-events-fade-right"></div>
+
+                    <!-- Single Horizontal Row: Right to Left + Manual Touch/Drag/Wheel Scroll -->
+                    <div class="mini-events-row" id="mini-events-row" data-direction="left">
+                        <div class="mini-events-track" id="mini-events-track">
+                            <!-- Card 01: Mumbai Hacks 2025 -->
+                            <a href="assets/certificates/MumbaiHacks_2025_Certificate.pdf" target="_blank" rel="noopener noreferrer" class="mini-event-card" aria-label="Mumbai Hacks 2025 Finalist Certificate">
+                                <div class="mini-event-thumb-wrap">
+                                    <div class="mini-event-ambient" style="background-image: url('assets/certificates/previews/MumbaiHacks_2025.jpg');"></div>
+                                    <img src="assets/certificates/previews/MumbaiHacks_2025.jpg" alt="Mumbai Hacks 2025 Finalist" class="mini-event-img" loading="lazy">
+                                    <span class="mini-event-year">2025</span>
+                                    <span class="mini-event-linkedin-icon">
+                                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15-5-5 1.41-1.41L11 14.17l7.59-7.59L20 8l-9 9z"/></svg>
+                                    </span>
+                                </div>
+                                <div class="mini-event-info">
+                                    <span class="mini-event-cat">HACKATHON • TOP 10% FINALIST</span>
+                                    <h4 class="mini-event-title">Mumbai Hacks 2025</h4>
+                                </div>
+                            </a>
+
+                            <!-- Card 02: FeRAN Edge Caching -->
+                            <a href="https://www.linkedin.com/in/rohan-marri-914886373/" target="_blank" rel="noopener noreferrer" class="mini-event-card" aria-label="NIT Warangal Research on LinkedIn">
+                                <div class="mini-event-thumb-wrap">
+                                    <div class="mini-event-ambient" style="background-image: url('assets/projects/feran_caching.svg');"></div>
+                                    <img src="assets/projects/feran_caching.svg" alt="FeRAN Edge Caching Architecture" class="mini-event-img" loading="lazy">
+                                    <span class="mini-event-year">2026</span>
+                                    <span class="mini-event-linkedin-icon">
+                                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg>
+                                    </span>
+                                </div>
+                                <div class="mini-event-info">
+                                    <span class="mini-event-cat">RESEARCH • NIT WARANGAL</span>
+                                    <h4 class="mini-event-title">FeRAN Edge Caching Architecture</h4>
+                                </div>
+                            </a>
+
+                            <!-- Card 03: Siemens Industrial IoT -->
+                            <a href="https://www.linkedin.com/in/rohan-marri-914886373/" target="_blank" rel="noopener noreferrer" class="mini-event-card" aria-label="Siemens IIoT Internship on LinkedIn">
+                                <div class="mini-event-thumb-wrap">
+                                    <div class="mini-event-ambient" style="background-image: url('assets/projects/iiot_siemens.svg');"></div>
+                                    <img src="assets/projects/iiot_siemens.svg" alt="Siemens Industrial IoT Telemetry" class="mini-event-img" loading="lazy">
+                                    <span class="mini-event-year">2025</span>
+                                    <span class="mini-event-linkedin-icon">
+                                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg>
+                                    </span>
+                                </div>
+                                <div class="mini-event-info">
+                                    <span class="mini-event-cat">INDUSTRY • NITW &amp; SIEMENS</span>
+                                    <h4 class="mini-event-title">Industrial IoT Telemetry Pipeline</h4>
+                                </div>
+                            </a>
+
+                            <!-- Card 04: AIAC National Contest -->
+                            <a href="assets/certificates/AIAC_Certificate.pdf" target="_blank" rel="noopener noreferrer" class="mini-event-card" aria-label="All India All College Certificate">
+                                <div class="mini-event-thumb-wrap">
+                                    <div class="mini-event-ambient" style="background-image: url('assets/certificates/previews/AIAC_Certificate.png');"></div>
+                                    <img src="assets/certificates/previews/AIAC_Certificate.png" alt="All India All College Contest" class="mini-event-img" loading="lazy">
+                                    <span class="mini-event-year">2025</span>
+                                    <span class="mini-event-linkedin-icon">
+                                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15-5-5 1.41-1.41L11 14.17l7.59-7.59L20 8l-9 9z"/></svg>
+                                    </span>
+                                </div>
+                                <div class="mini-event-info">
+                                    <span class="mini-event-cat">CONTEST • ALGORITHMIC SOLVING</span>
+                                    <h4 class="mini-event-title">All India All College (AIAC)</h4>
+                                </div>
+                            </a>
+
+                            <!-- Card 05: IBM Quantum Enigmas -->
+                            <a href="assets/certificates/IBM_Quantum_Enigmas_Badge.pdf" target="_blank" rel="noopener noreferrer" class="mini-event-card" aria-label="IBM Quantum Enigmas Credential">
+                                <div class="mini-event-thumb-wrap">
+                                    <div class="mini-event-ambient" style="background-image: url('assets/certificates/previews/IBM_Quantum_Basics.png.png');"></div>
+                                    <img src="assets/certificates/previews/IBM_Quantum_Basics.png.png" alt="IBM Quantum Enigmas Badge" class="mini-event-img" loading="lazy">
+                                    <span class="mini-event-year">2025</span>
+                                    <span class="mini-event-linkedin-icon">
+                                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15-5-5 1.41-1.41L11 14.17l7.59-7.59L20 8l-9 9z"/></svg>
+                                    </span>
+                                </div>
+                                <div class="mini-event-info">
+                                    <span class="mini-event-cat">CREDENTIAL • QUANTUM CIRCUITS</span>
+                                    <h4 class="mini-event-title">IBM Quantum Enigmas</h4>
+                                </div>
+                            </a>
+
+                            <!-- Card 06: Quantum Computing Open University -->
+                            <a href="assets/certificates/Quantum_Computing_The_Open_University.pdf" target="_blank" rel="noopener noreferrer" class="mini-event-card" aria-label="Quantum Computing Certificate">
+                                <div class="mini-event-thumb-wrap">
+                                    <div class="mini-event-ambient" style="background-image: url('assets/certificates/previews/Discovering_chemistry.png.png');"></div>
+                                    <img src="assets/certificates/previews/Discovering_chemistry.png.png" alt="Quantum Computing Course" class="mini-event-img" loading="lazy">
+                                    <span class="mini-event-year">2025</span>
+                                    <span class="mini-event-linkedin-icon">
+                                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15-5-5 1.41-1.41L11 14.17l7.59-7.59L20 8l-9 9z"/></svg>
+                                    </span>
+                                </div>
+                                <div class="mini-event-info">
+                                    <span class="mini-event-cat">CERTIFICATION • THE OPEN UNIVERSITY</span>
+                                    <h4 class="mini-event-title">Quantum Computing &amp; Logic</h4>
+                                </div>
+                            </a>
+
+                            <!-- Card 07: AI Seller Assistant -->
+                            <a href="https://github.com/MarriRohan" target="_blank" rel="noopener noreferrer" class="mini-event-card" aria-label="AI Seller Assistant on GitHub">
+                                <div class="mini-event-thumb-wrap">
+                                    <div class="mini-event-ambient" style="background-image: url('assets/projects/ai_seller_assistant.svg');"></div>
+                                    <img src="assets/projects/ai_seller_assistant.svg" alt="AI Seller Assistant" class="mini-event-img" loading="lazy">
+                                    <span class="mini-event-year">2026</span>
+                                    <span class="mini-event-linkedin-icon">
+                                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                                    </span>
+                                </div>
+                                <div class="mini-event-info">
+                                    <span class="mini-event-cat">PROJECT • MULTIMODAL GEMINI</span>
+                                    <h4 class="mini-event-title">AI Seller Assistant</h4>
+                                </div>
+                            </a>
+
+                            <!-- Card 08: CSV Dataset Visualizer -->
+                            <a href="https://github.com/MarriRohan" target="_blank" rel="noopener noreferrer" class="mini-event-card" aria-label="CSV Dataset Visualizer on GitHub">
+                                <div class="mini-event-thumb-wrap">
+                                    <div class="mini-event-ambient" style="background-image: url('assets/projects/csv_visualizer.svg');"></div>
+                                    <img src="assets/projects/csv_visualizer.svg" alt="CSV Dataset Visualizer" class="mini-event-img" loading="lazy">
+                                    <span class="mini-event-year">2025</span>
+                                    <span class="mini-event-linkedin-icon">
+                                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                                    </span>
+                                </div>
+                                <div class="mini-event-info">
+                                    <span class="mini-event-cat">PROJECT • AUTOMATED EDA</span>
+                                    <h4 class="mini-event-title">CSV Dataset Visualizer &amp; Insight</h4>
+                                </div>
+                            </a>
+
+                            <!-- Seamless Duplicate Set for Infinite Marquee wrap -->
+                            <a href="assets/certificates/MumbaiHacks_2025_Certificate.pdf" target="_blank" rel="noopener noreferrer" class="mini-event-card" aria-label="Mumbai Hacks 2025 Finalist Certificate">
+                                <div class="mini-event-thumb-wrap">
+                                    <div class="mini-event-ambient" style="background-image: url('assets/certificates/previews/MumbaiHacks_2025.jpg');"></div>
+                                    <img src="assets/certificates/previews/MumbaiHacks_2025.jpg" alt="Mumbai Hacks 2025 Finalist" class="mini-event-img" loading="lazy">
+                                    <span class="mini-event-year">2025</span>
+                                    <span class="mini-event-linkedin-icon">
+                                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15-5-5 1.41-1.41L11 14.17l7.59-7.59L20 8l-9 9z"/></svg>
+                                    </span>
+                                </div>
+                                <div class="mini-event-info">
+                                    <span class="mini-event-cat">HACKATHON • TOP 10% FINALIST</span>
+                                    <h4 class="mini-event-title">Mumbai Hacks 2025</h4>
+                                </div>
+                            </a>
+
+                            <a href="https://www.linkedin.com/in/rohan-marri-914886373/" target="_blank" rel="noopener noreferrer" class="mini-event-card" aria-label="NIT Warangal Research on LinkedIn">
+                                <div class="mini-event-thumb-wrap">
+                                    <div class="mini-event-ambient" style="background-image: url('assets/projects/feran_caching.svg');"></div>
+                                    <img src="assets/projects/feran_caching.svg" alt="FeRAN Edge Caching Architecture" class="mini-event-img" loading="lazy">
+                                    <span class="mini-event-year">2026</span>
+                                    <span class="mini-event-linkedin-icon">
+                                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg>
+                                    </span>
+                                </div>
+                                <div class="mini-event-info">
+                                    <span class="mini-event-cat">RESEARCH • NIT WARANGAL</span>
+                                    <h4 class="mini-event-title">FeRAN Edge Caching Architecture</h4>
+                                </div>
+                            </a>
+
+                            <a href="https://www.linkedin.com/in/rohan-marri-914886373/" target="_blank" rel="noopener noreferrer" class="mini-event-card" aria-label="Siemens IIoT Internship on LinkedIn">
+                                <div class="mini-event-thumb-wrap">
+                                    <div class="mini-event-ambient" style="background-image: url('assets/projects/iiot_siemens.svg');"></div>
+                                    <img src="assets/projects/iiot_siemens.svg" alt="Siemens Industrial IoT Telemetry" class="mini-event-img" loading="lazy">
+                                    <span class="mini-event-year">2025</span>
+                                    <span class="mini-event-linkedin-icon">
+                                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg>
+                                    </span>
+                                </div>
+                                <div class="mini-event-info">
+                                    <span class="mini-event-cat">INDUSTRY • NITW &amp; SIEMENS</span>
+                                    <h4 class="mini-event-title">Industrial IoT Telemetry Pipeline</h4>
+                                </div>
+                            </a>
+
+                            <a href="assets/certificates/AIAC_Certificate.pdf" target="_blank" rel="noopener noreferrer" class="mini-event-card" aria-label="All India All College Certificate">
+                                <div class="mini-event-thumb-wrap">
+                                    <div class="mini-event-ambient" style="background-image: url('assets/certificates/previews/AIAC_Certificate.png');"></div>
+                                    <img src="assets/certificates/previews/AIAC_Certificate.png" alt="All India All College Contest" class="mini-event-img" loading="lazy">
+                                    <span class="mini-event-year">2025</span>
+                                    <span class="mini-event-linkedin-icon">
+                                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15-5-5 1.41-1.41L11 14.17l7.59-7.59L20 8l-9 9z"/></svg>
+                                    </span>
+                                </div>
+                                <div class="mini-event-info">
+                                    <span class="mini-event-cat">CONTEST • ALGORITHMIC SOLVING</span>
+                                    <h4 class="mini-event-title">All India All College (AIAC)</h4>
+                                </div>
+                            </a>
+
+                            <a href="assets/certificates/IBM_Quantum_Enigmas_Badge.pdf" target="_blank" rel="noopener noreferrer" class="mini-event-card" aria-label="IBM Quantum Enigmas Credential">
+                                <div class="mini-event-thumb-wrap">
+                                    <div class="mini-event-ambient" style="background-image: url('assets/certificates/previews/IBM_Quantum_Basics.png.png');"></div>
+                                    <img src="assets/certificates/previews/IBM_Quantum_Basics.png.png" alt="IBM Quantum Enigmas Badge" class="mini-event-img" loading="lazy">
+                                    <span class="mini-event-year">2025</span>
+                                    <span class="mini-event-linkedin-icon">
+                                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15-5-5 1.41-1.41L11 14.17l7.59-7.59L20 8l-9 9z"/></svg>
+                                    </span>
+                                </div>
+                                <div class="mini-event-info">
+                                    <span class="mini-event-cat">CREDENTIAL • QUANTUM CIRCUITS</span>
+                                    <h4 class="mini-event-title">IBM Quantum Enigmas</h4>
+                                </div>
+                            </a>
+
+                            <a href="assets/certificates/Quantum_Computing_The_Open_University.pdf" target="_blank" rel="noopener noreferrer" class="mini-event-card" aria-label="Quantum Computing Certificate">
+                                <div class="mini-event-thumb-wrap">
+                                    <div class="mini-event-ambient" style="background-image: url('assets/certificates/previews/Discovering_chemistry.png.png');"></div>
+                                    <img src="assets/certificates/previews/Discovering_chemistry.png.png" alt="Quantum Computing Course" class="mini-event-img" loading="lazy">
+                                    <span class="mini-event-year">2025</span>
+                                    <span class="mini-event-linkedin-icon">
+                                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15-5-5 1.41-1.41L11 14.17l7.59-7.59L20 8l-9 9z"/></svg>
+                                    </span>
+                                </div>
+                                <div class="mini-event-info">
+                                    <span class="mini-event-cat">CERTIFICATION • THE OPEN UNIVERSITY</span>
+                                    <h4 class="mini-event-title">Quantum Computing &amp; Logic</h4>
+                                </div>
+                            </a>
+
+                            <a href="https://github.com/MarriRohan" target="_blank" rel="noopener noreferrer" class="mini-event-card" aria-label="AI Seller Assistant on GitHub">
+                                <div class="mini-event-thumb-wrap">
+                                    <div class="mini-event-ambient" style="background-image: url('assets/projects/ai_seller_assistant.svg');"></div>
+                                    <img src="assets/projects/ai_seller_assistant.svg" alt="AI Seller Assistant" class="mini-event-img" loading="lazy">
+                                    <span class="mini-event-year">2026</span>
+                                    <span class="mini-event-linkedin-icon">
+                                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                                    </span>
+                                </div>
+                                <div class="mini-event-info">
+                                    <span class="mini-event-cat">PROJECT • MULTIMODAL GEMINI</span>
+                                    <h4 class="mini-event-title">AI Seller Assistant</h4>
+                                </div>
+                            </a>
+
+                            <a href="https://github.com/MarriRohan" target="_blank" rel="noopener noreferrer" class="mini-event-card" aria-label="CSV Dataset Visualizer on GitHub">
+                                <div class="mini-event-thumb-wrap">
+                                    <div class="mini-event-ambient" style="background-image: url('assets/projects/csv_visualizer.svg');"></div>
+                                    <img src="assets/projects/csv_visualizer.svg" alt="CSV Dataset Visualizer" class="mini-event-img" loading="lazy">
+                                    <span class="mini-event-year">2025</span>
+                                    <span class="mini-event-linkedin-icon">
+                                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                                    </span>
+                                </div>
+                                <div class="mini-event-info">
+                                    <span class="mini-event-cat">PROJECT • AUTOMATED EDA</span>
+                                    <h4 class="mini-event-title">CSV Dataset Visualizer &amp; Insight</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section class="contact-section section-padding" id="contact">
+                <div class="container grid-split contact-grid-wrapper">
+                    <div class="contact-info-side scroll-trigger">
+                        <h2 class="contact-hero-title text-accent">LET'S BUILD SOMETHING.</h2>
+                        <p class="contact-subtitle">
+                            Have an idea, opportunity, collaboration or project? Let's connect.
+                        </p>
+
+                        <div class="contact-direct-items">
+                            <a href="mailto:rohanmarri18@gmail.com" class="direct-contact-item direct-email-link"
+                                aria-label="Send email to Rohan Marri">
+                                <div class="contact-icon-circle email-icon-circle">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" />
+                                        <path
+                                            d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
+                                    </svg>
+                                </div>
+                                <div class="contact-item-details">
+                                    <span class="direct-label">EMAIL DIRECTLY</span>
+                                    <span class="direct-val email-val">rohanmarri18@gmail.com</span>
+                                </div>
+                            </a>
+
+                            <div class="direct-contact-item direct-location-item">
+                                <div class="contact-icon-circle location-icon-circle">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                                        <circle cx="12" cy="10" r="3"></circle>
+                                    </svg>
+                                </div>
+                                <div class="contact-item-details">
+                                    <span class="direct-label">CURRENTLY BASED</span>
+                                    <span class="direct-val location-val">Warangal, Telangana, India</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Connect Social Area -->
+                        <div class="connect-social-container">
+                            <span class="direct-label">CONNECT WITH ME</span>
+                            <div class="connect-social-icons" id="connect-social-icons">
+                                <!-- Populated dynamically by script.js -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-side scroll-trigger">
+                        <form class="contact-form-element" id="contact-form" novalidate>
+                            <div class="form-row">
+                                <label for="form-name">Name</label>
+                                <input type="text" id="form-name" placeholder="Enter your name" required>
+                                <span class="field-error-msg" id="name-error">Please enter your name</span>
+                            </div>
+                            <div class="form-row">
+                                <label for="form-email">Email</label>
+                                <input type="email" id="form-email" placeholder="Enter your email" required>
+                                <span class="field-error-msg" id="email-error">Please enter a valid email address</span>
+                            </div>
+                            <div class="form-row">
+                                <label for="form-message">Message</label>
+                                <textarea id="form-message" rows="5" placeholder="How can I help you?"
+                                    required></textarea>
+                                <span class="field-error-msg" id="message-error">Please enter your message</span>
+                            </div>
+                            <button type="submit" class="btn btn-primary form-submit-btn">Send Message</button>
+                        </form>
+
+                        <!-- Success Notification Alert -->
+                        <div class="form-success-card" id="form-success-card">
+                            <span class="success-icon">✓</span>
+                            <h3>Thanks! The form is ready to connect.</h3>
+                            <p>I will get back to you shortly.</p>
+                            <button class="btn btn-secondary success-dismiss-btn" id="success-dismiss">Dismiss</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="main-footer">
+            <div class="footer-container">
+                <div class="footer-upper">
+                    <span class="footer-logo">ROHAN MARRI</span>
+                    <p class="footer-subtext">B.Tech CSE &bull; Software Engineer &bull; AI &amp; IoT Developer</p>
+                </div>
+                <div class="footer-lower">
+                    <p class="footer-copyright">&copy; 2026 Rohan Marri. All rights reserved.</p>
+                    <div class="footer-social-links">
+                        <a href="https://github.com/MarriRohan" target="_blank"
+                            rel="noopener noreferrer">GitHub</a>
+                        <a href="https://www.linkedin.com/in/rohan-marri-914886373/" target="_blank"
+                            rel="noopener noreferrer">LinkedIn</a>
+                        <a href="mailto:rohanmarri18@gmail.com">Email</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Native dialog case studies details -->
+        <dialog class="project-modal" id="project-details-modal">
+            <div class="modal-wrapper">
+                <button class="modal-close-btn" id="modal-close" aria-label="Close modal">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+                <div class="modal-body-container" id="modal-details-content">
+                    <!-- Injected dynamically by JS -->
+                </div>
+            </div>
+        </dialog>
+
+        <!-- Native dialog certificate lightbox / PDF Viewer -->
+        <dialog class="cert-lightbox" id="cert-lightbox-modal">
+            <div class="lightbox-wrapper">
+                <div class="lightbox-header-bar">
+                    <div class="lightbox-header-info">
+                        <h4 class="lightbox-title-text" id="lightbox-title-text">Certificate Document</h4>
+                        <span class="lightbox-subtitle-text" id="lightbox-issuer-text">Verified Credential</span>
+                    </div>
+                    <div class="lightbox-controls">
+                        <a href="#" id="lightbox-open-tab" class="lightbox-ctrl-btn" target="_blank"
+                            rel="noopener noreferrer" title="Open PDF in New Tab">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15"
+                                height="15">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                            <span>Open in Tab</span>
+                        </a>
+                        <a href="#" id="lightbox-download-btn" class="lightbox-ctrl-btn" download
+                            title="Download Certificate PDF">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15"
+                                height="15">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            <span>Download</span>
+                        </a>
+                        <button class="lightbox-close-btn" id="lightbox-close" aria-label="Close viewer">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16"
+                                height="16">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="lightbox-body" id="lightbox-content">
+                    <!-- Injected dynamically by JS -->
+                </div>
+            </div>
+        </dialog>
+
+    </div>
+
+    <!-- Redesigned Interaction Script -->
+    <script src="script.js?v=30"></script>
+</body>
+
+</html>
